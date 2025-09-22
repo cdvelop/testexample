@@ -2,6 +2,6 @@ package testexample
 
 import "testing"
 
-func TestExampleFunAdd(t *testing.T) {
+func TestExampleFunAbs(t *testing.T) {
 
 }
