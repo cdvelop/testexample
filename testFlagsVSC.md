@@ -1,6 +1,6 @@
 
 
-## configuraciones de test en visual estudio code para go
+## configuraciones de test en visual estudio code para go settings.json
 ```json
 
 {
