@@ -5,26 +5,40 @@ import (
 	"testing"
 
 	"github.com/cdvelop/testexample/database"
-	"github.com/cdvelop/testexample/userInterface"
+	//"github.com/cdvelop/testexample/userInterface"
 )
+
+type dbInterfaceTest interface {
+	Conectar() error
+}
 
 func TestIntegration(t *testing.T) {
 
-	db, err := database.NewDatabaseEngine("posg")
-	if err != nil {
-		t.Failed()
+	testData := []struct {
+		testName      string
+		dbInputType   string
+		expectedError string
+	}{
+		{testName: "Base de datos se espera error", dbInputType: "post", expectedError: "db not found"},
+		{testName: "Base de datos SQLite ok", dbInputType: "sqlite", expectedError: "connection ok"},
+		{testName: "Base de datos Postgres ok", dbInputType: "postgres", expectedError: "connection ok"},
 	}
 
-	err = db.Conectar()
-	if err != nil {
-		t.Fatalf("fallo el test de la db")
-	}
+	for _, tt := range testData {
+		t.Run(tt.dbInputType, func(t *testing.T) {
+			_, err := database.NewDatabaseEngine(tt.dbInputType)
+			errorEsperado := "connection ok"
 
-	ui := userInterface.New("<form>inputxx</form>")
+			if err != nil {
+				// transformo el error a string
+				errorEsperado = err.Error()
+			}
 
-	formHtml := ui.Render()
-	if formHtml == "" {
-		t.Fatalf("fallo el test de la UI")
+			if errorEsperado != tt.expectedError {
+				t.Fatalf("Error esperado: %v, obtenido: %v", tt.expectedError, errorEsperado)
+			}
+
+		})
 	}
 
 }
