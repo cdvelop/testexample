@@ -8,7 +8,7 @@
     "go.testFlags": [
         "-v",// que el test se muestra con detalle verboso
         //"-failfast", el test al fallar se detiene
-        "-test.v" // no me recuerdo
+        "-test.v" // // Activa la salida detallada durante las pruebas
     ],
     "go.coverOnSingleTest": true,
     "go.coverageOptions": "showUncoveredCodeOnly",
