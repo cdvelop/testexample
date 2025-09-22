@@ -14,7 +14,8 @@ func New(config string) postgresEngine {
 	}
 }
 
-func (db postgresEngine) Conectar() {
+func (db postgresEngine) Conectar() error {
 	fmt.Println("conectando a base de datos Postgres")
 
+	return nil
 }

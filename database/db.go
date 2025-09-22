@@ -8,11 +8,11 @@ import (
 )
 
 type DataBaseInterface interface {
-	Conectar()
+	Conectar() error
 }
 
 // base de datos soportadas: "sqlite", "postgres" despues sera firebase
-func NewDatabaseEngine(dbName string) DataBaseInterface {
+func NewDatabaseEngine(dbName string) (DataBaseInterface, error) {
 
 	switch dbName {
 
@@ -20,18 +20,17 @@ func NewDatabaseEngine(dbName string) DataBaseInterface {
 
 		newPG := postgres.New("postgres://user:pass@localhost:5432/dbname")
 
-		return newPG
+		return newPG, nil
 
 	case "sqlite":
 
 		newSqLite := sqlite.New("./midb")
 
-		return newSqLite
+		return newSqLite, nil
 
 	default:
-		fmt.Println("NO existe esta db:", dbName)
 
-		return nil
+		return nil, fmt.Errorf("NO existe esta db:", dbName)
 	}
 
 }

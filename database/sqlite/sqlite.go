@@ -13,6 +13,8 @@ func New(config string) sqliteEngine {
 	}
 }
 
-func (db sqliteEngine) Conectar() {
+func (db sqliteEngine) Conectar() error {
 	fmt.Println("conectando a base de datos Sqlite")
+
+	return nil
 }
