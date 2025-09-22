@@ -1,7 +1,18 @@
 package testexample
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
-func TestExampleFunAdd(t *testing.T) {
+func TestExampleFunGenerarSaludo(t *testing.T) {
+
+	result := GenerarSaludo("Cesar")
+
+	expectativa := "Hello, Cesar!"
+
+	if result != expectativa {
+		fmt.Println("Error GenerarSaludo, se esperaba " + expectativa + " y se obtuvo " + result)
+	}
 
 }

@@ -1,6 +1,6 @@
 package testexample
 
-func Abs(nombre string) string {
+func GenerarSaludo(nombre string) string {
 
 	return "Hello, " + nombre + "!"
 }
