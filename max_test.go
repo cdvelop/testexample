@@ -8,7 +8,7 @@ func TestMax(t *testing.T) {
 		a, b        int    // datos de entrada
 		expectativa int    // expectativa
 	}{
-		{"Caso 1: a mayor que b positivos", 7, 3, 7},
+		{"Caso 1: a mayor que b positivos", 8, 4, 8},
 		{"Caso 2: b mayor que a positivos", 5, 10, 10},
 		{"Caso 3: números iguales positivos", 8, 8, 8},
 		{"Caso 4: a mayor que b negativos", -2, -5, -2},
@@ -17,7 +17,7 @@ func TestMax(t *testing.T) {
 		{"Caso 7: a positivo b negativo", 6, -2, 6},
 		{"Caso 8: a negativo b positivo", -3, 9, 9},
 		{"Caso 9: uno es cero a mayor", 5, 0, 5},
-		{"Caso 10: uno es cero b mayor", 0, 7, 7},
+		{"Caso 10: uno es cero b mayor", 0, 8, 8},
 		{"Caso 11: ambos son cero", 0, 0, 0},
 		{"Caso 12: números grandes positivos", 1000, 999, 1000},
 		{"Caso 13: números grandes negativos", -1000, -999, -999},
