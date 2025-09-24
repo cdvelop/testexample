@@ -40,7 +40,7 @@ func TestAdd(t *testing.T) {
 
 ---
 
-## ✅ Caso 001 – Suma de positivos en un slice
+## ✅ Caso 001 – Suma de positivos en un slice (5 pts.)
 
 ```go
 // SumPositives retorna la suma de los enteros positivos dentro del slice nums.
@@ -54,7 +54,7 @@ func SumPositives(nums []int) int {
 
 ---
 
-## ✅ Caso 002 – Máximo de dos números
+## ✅ Caso 002 – Máximo de dos números (10 pts.)
 
 ```go
 // Max retorna el mayor de los dos números a y b.
@@ -67,7 +67,7 @@ func Max(a, b int) int {
 
 ---
 
-## ✅ Caso 003 – Es par
+## ✅ Caso 003 – Es par (5 pts.)
 
 ```go
 // IsEven retorna true si n es par, false en caso contrario.
@@ -80,7 +80,7 @@ func IsEven(n int) bool {
 
 ---
 
-## ✅ Caso 004 – Factorial
+## ✅ Caso 004 – Factorial (15 pts.)
 
 ```go
 // Factorial retorna el factorial de n (n!).
@@ -94,7 +94,7 @@ func Factorial(n int) int {
 
 ---
 
-## ✅ Caso 005 – Palíndromo
+## ✅ Caso 005 – Palíndromo (15 pts.)
 
 ```go
 // IsPalindrome retorna true si la palabra es un palíndromo.
@@ -109,7 +109,7 @@ func IsPalindrome(s string) bool {
 
 ---
 
-## ✅ Caso 006 – Reversa de string
+## ✅ Caso 006 – Reversa de string (10 pts.)
 
 ```go
 // Reverse retorna el string invertido.
@@ -122,7 +122,7 @@ func Reverse(s string) string {
 
 ---
 
-## ✅ Caso 007 – Promedio
+## ✅ Caso 007 – Promedio (10 pts.)
 
 ```go
 // Average retorna el promedio de una lista de enteros.
@@ -136,7 +136,7 @@ func Average(nums []int) float64 {
 
 ---
 
-## ✅ Caso 008 – Contar vocales
+## ✅ Caso 008 – Contar vocales (10 pts.)
 
 ```go
 // CountVowels retorna cuántas vocales (a,e,i,o,u) hay en el string.
@@ -149,7 +149,7 @@ func CountVowels(s string) int {
 
 ---
 
-## ✅ Caso 009 – Buscar en slice
+## ✅ Caso 009 – Buscar en slice (5 pts.)
 
 ```go
 // Contains retorna true si el número target está dentro del slice nums.
@@ -162,7 +162,7 @@ func Contains(nums []int, target int) bool {
 
 ---
 
-## ✅ Caso 010 – Fibonacci
+## ✅ Caso 010 – Fibonacci (15 pts.)
 
 ```go
 // Fibonacci retorna el n-ésimo número de Fibonacci.
