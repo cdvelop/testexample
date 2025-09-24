@@ -165,9 +165,27 @@ func Contains(nums []int, target int) bool {
 ## ✅ Caso 010 – Fibonacci (15 pts.)
 
 ```go
-// Fibonacci retorna el n-ésimo número de Fibonacci.
-// Ejemplo: Fibonacci(0)=0, Fibonacci(1)=1, Fibonacci(5)=5
-// Ejemplo adicional: Fibonacci(7) == 13
+// Descripción:
+// La sucesión de Fibonacci es una secuencia donde cada término a partir
+// del segundo es la suma de los dos anteriores. Usando la convención con
+// índice 0 (0-based):
+//   Fibonacci(0) = 0
+//   Fibonacci(1) = 1
+// Para n >= 2:
+//   Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2)
+//
+// Notas importantes:
+// - El índice aquí es 0-based (Fibonacci(0)=0).
+// - Para esta práctica supongamos n razonablemente pequeño (por ejemplo
+//   n <= 45) para que el resultado quepa en un int de 32 bits.
+//
+// Ejemplos:
+// Fibonacci(0) == 0
+// Fibonacci(1) == 1
+// Fibonacci(5) == 5    // secuencia: 0,1,1,2,3,5
+// Fibonacci(7) == 13   // secuencia: 0,1,1,2,3,5,8,13
+// Fibonacci(10) == 55
+// Fibonacci(12) == 144
 func Fibonacci(n int) int {
 	// TODO: implementar
 	return 0
@@ -176,17 +194,24 @@ func Fibonacci(n int) int {
 
 ---
 
-📊 **Pauta de Evaluación para todos los casos (40 pts c/u)**
+📊 **Pauta de Evaluación (sistema por descuentos)**
 
-| Criterio                     | Descripción                           | Puntaje    |
-| ---------------------------- | ------------------------------------- | ---------- |
-| Creación de rama correcta    | Rama creada con el formato solicitado | 5 pts      |
-| Implementación de la función | Función implementada correctamente    | 10 pts     |
-| Estructura del test          | Table-driven test en Go               | 5 pts      |
-| Cantidad de casos            | Al menos 10 casos distintos           | 10 pts     |
-| Variedad de casos            | Cobertura de escenarios diversos      | 5 pts      |
-| Calidad del test             | Casos bien nombrados, errores claros  | 5 pts      |
-| **Total**                    |                                       | **40 pts** |
+Los alumnos deben ganar los puntos resolviendo los tests y cumpliendo la pauta. El puntaje máximo disponible al que pueden optar es 50 pts. no importa que resuelvan mas.
+
+### Tabla criterios  descuentos(cada incumplimiento descuenta 5 pts):
+
+| Ítem (descarta 5 pts si no cumplido)     | Descripción breve                                |
+| ---------------------------------------- | ------------------------------------------------ |
+| Rama con formato correcto                | No creó la rama con el formato solicitado        |
+| Implementación                        | La función no compila o está claramente incorrecta |
+| Test table-driven                      | No se usó una estructura table-driven en el test |
+| ≥ 10 casos en el test                   | Menos de 10 casos en el archivo de test         |
+| Variedad de escenarios                  | Casos muy repetitivos o no cubren bordes        |
+| Calidad del test                        | Nombres/mensajes poco claros o aserciones débiles |
+
+Notas importantes:
+- Los criterios se aplican de forma independiente.
+- Esta pauta se aplica a cada uno de los casos individualmente.
 
 ---
 
