@@ -1,4 +1,4 @@
-package main
+package testexample
 
 // Max retorna el mayor de los dos números a y b.
 // Ejemplo: Max(4, 8) == 8
