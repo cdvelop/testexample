@@ -1,38 +1,28 @@
 package testexample
 
-import (
-	"testing"
-)
-
-// Helper function to reverse an integer and check if it's a palindrome
-func isPalindrome(n int) bool {
-	rev := 0
-	cpy := n
-	for n > 0 {
-		rev = rev*10 + n%10
-		n = n / 10
-	}
-	return rev == cpy
-}
+import "testing"
 
 func TestIsPalindrome(t *testing.T) {
 	tests := []struct {
-		input    int
+		input    string
 		expected bool
 	}{
-		{121, true},
-		{12321, true},
-		{123, false},
-		{1, true},
-		{22, true},
-		{10, false},
-		{0, true},
+		{"radar", true},
+		{"civic", true},
+		{"level", true},
+		{"racecar", true},
+		{"noon", true},
+		{"hello", false},
+		{"world", false},
+		{"madam", true},
+		{"python", false},
+		{"java", false},
 	}
 
-	for _, tt := range tests {
-		result := isPalindrome(tt.input)
-		if result != tt.expected {
-			t.Errorf("isPalindrome(%d) = %v; want %v", tt.input, result, tt.expected)
+	for _, tc := range tests {
+		result := isPalindrome(tc.input)
+		if result != tc.expected {
+			t.Errorf("Para '%s', se esperaba %t pero se obtuvo %t", tc.input, tc.expected, result)
 		}
 	}
 }

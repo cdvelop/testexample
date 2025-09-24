@@ -7,7 +7,7 @@ func TestMax(t *testing.T) {
 	b := 27
 	expected := 42
 
-	result := max(a, b)
+	result := Max(a, b)
 	if result != expected {
 		t.Errorf("Expected max(%d, %d) to be %d but got %d", a, b, expected, result)
 	}

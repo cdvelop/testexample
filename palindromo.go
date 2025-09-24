@@ -1,21 +1,18 @@
 package testexample
 
-import "fmt"
+import "regexp"
 
-func isPalindromo() {
-	var a, rev int
-	fmt.Println("Enter the number: ")
-	fmt.Scanf("%v", &a)
-	rev = 0
-	cpy := a
-	for a > 0 {
-		rev = rev*10 + a%10
-		a = a / 10
+func isPalindrome(s string) bool {
+	pattern := regexp.MustCompile(`^[\p{L}]+$`)
+	if !pattern.MatchString(s) {
+		return false
 	}
-	fmt.Printf("The number reversed: %v", rev)
-	if rev == cpy {
-		fmt.Printf("\nThe number is a palindrome.")
-	} else {
-		fmt.Printf("\nThe number is not a palindrome.")
+	runes := []rune(s)
+	n := len(runes)
+	for i := 0; i < n/2; i++ {
+		if runes[i] != runes[n-1-i] {
+			return false
+		}
 	}
+	return true
 }
