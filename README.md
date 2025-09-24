@@ -20,7 +20,7 @@ func TestAdd(t *testing.T) {
 		a, b int // datos de entrada
 		expectativa int // expectativa
 	}{
-		{"Caso 1 expectativa correcta", 1, 2, 3},
+		{"Caso 1 entradas 1 y 2 expectativa 3 OK", 1, 2, 3},
 		// TODO: agregar al menos 10 casos
 	}
 
@@ -83,9 +83,26 @@ func IsEven(n int) bool {
 ## ✅ Caso 004 – Factorial (15 pts.)
 
 ```go
-// Factorial retorna el factorial de n (n!).
-// Se asume que n >= 0.
-// Ejemplo: Factorial(5) == 120
+// Descripción:
+// El factorial de un entero no negativo n (denotado n!) es el producto
+// de todos los enteros positivos desde 1 hasta n. Por convención:
+//   0! = 1
+// Y para n >= 1:
+//   n! = n * (n-1)!
+//
+// Notas importantes:
+// - Se asume n >= 0; los valores negativos no están definidos para factorial
+//   en este ejercicio.
+// - El factorial crece muy rápido. Para n relativamente grandes puede
+//   producirse desbordamiento (overflow) en tipos enteros de 32 o 64 bits.
+//   Si se espera n grande se debe usar un tipo con mayor capacidad (por
+//   ejemplo uint64) o big.Int de la biblioteca estándar.
+//
+// Ejemplos:
+// Factorial(0) == 1
+// Factorial(5) == 120   // 5*4*3*2*1 = 120
+// Factorial(6) == 720   // 6*5*4*3*2*1 = 720
+// Factorial(10) == 3628800
 func Factorial(n int) int {
 	// TODO: implementar
 	return 0
@@ -207,7 +224,8 @@ Los alumnos deben ganar los puntos resolviendo los tests y cumpliendo la pauta. 
 | Test table-driven                      | No se usó una estructura table-driven en el test |
 | ≥ 10 casos en el test                   | Menos de 10 casos en el archivo de test         |
 | Variedad de escenarios                  | Casos muy repetitivos o no cubren bordes        |
-| Calidad del test                        | Nombres/mensajes poco claros o aserciones débiles |
+| Calidad del test                        | Nombres/mensajes poco claros |
+| Implementaciones duplicadas            | Si hay 2 (o más) implementaciones del mismo caso con los mismos números, se descontarán 5 pts por cada ítem repetido. |
 
 Notas importantes:
 - Los criterios se aplican de forma independiente.
