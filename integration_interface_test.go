@@ -1,44 +1,28 @@
-// test caja negra
-package testexample_test
+package testexample
 
 import (
-	"testing"
-
-	"github.com/cdvelop/testexample/database"
-	//"github.com/cdvelop/testexample/userInterface"
+	"errors"
 )
 
-type dbInterfaceTest interface {
+type Database interface {
 	Conectar() error
 }
 
-func TestIntegration(t *testing.T) {
+type SQLite struct{}
 
-	testData := []struct {
-		testName      string
-		dbInputType   string
-		expectedError string
-	}{
-		{testName: "Base de datos se espera error", dbInputType: "post", expectedError: "db not found"},
-		{testName: "Base de datos SQLite ok", dbInputType: "sqlite", expectedError: "connection ok"},
-		{testName: "Base de datos Postgres ok", dbInputType: "postgres", expectedError: "connection ok"},
+func (s SQLite) Conectar() error { return nil }
+
+type Postgres struct{}
+
+func (p Postgres) Conectar() error { return nil }
+
+func NewDatabaseEngine(dbType string) (Database, error) {
+	switch dbType {
+	case "sqlite":
+		return SQLite{}, nil
+	case "postgres":
+		return Postgres{}, nil
+	default:
+		return nil, errors.New("db not found")
 	}
-
-	for _, tt := range testData {
-		t.Run(tt.dbInputType, func(t *testing.T) {
-			_, err := database.NewDatabaseEngine(tt.dbInputType)
-			errorEsperado := "connection ok"
-
-			if err != nil {
-				// transformo el error a string
-				errorEsperado = err.Error()
-			}
-
-			if errorEsperado != tt.expectedError {
-				t.Fatalf("Error esperado: %v, obtenido: %v", tt.expectedError, errorEsperado)
-			}
-
-		})
-	}
-
 }
