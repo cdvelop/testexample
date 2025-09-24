@@ -5,7 +5,7 @@ Cada alumno debe:
 1. Crear una rama a partir de `test/certamen/` repositorio: `github.com/cdvelop/testexample` con el formato:
 
    ```
-   test/certamen/<apellido-nombre>/caso_XXX
+   test/certamen/<apellido-nombre>
    ```
 2. Completar la función indicada con el nombre de archivo: `nombre_funcion.go`.
 
