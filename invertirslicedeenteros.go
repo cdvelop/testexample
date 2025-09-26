@@ -1,15 +1,10 @@
-package main
+package main // Paquete principal
 
 // ReverseSlice retorna un nuevo slice con los elementos de nums en orden inverso.
-func ReverseSlice(nums []int) []int {
-	// Creamos un nuevo slice con la misma longitud que el original.
-	reversed := make([]int, len(nums))
-
-	// Recorremos el slice original y copiamos los elementos en el nuevo
-	// slice en orden inverso.
-	for i, j := 0, len(nums)-1; i < len(nums); i, j = i+1, j-1 {
-		reversed[i] = nums[j]
+func ReverseSlice(nums []int) []int { // Invierte un slice de enteros
+	reversed := make([]int, len(nums))                           // Crea un nuevo slice con la misma longitud
+	for i, j := 0, len(nums)-1; i < len(nums); i, j = i+1, j-1 { // Recorre desde ambos extremos
+		reversed[i] = nums[j] // Asigna el valor inverso
 	}
-
-	return reversed
+	return reversed // Retorna el slice invertido
 }

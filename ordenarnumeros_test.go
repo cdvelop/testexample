@@ -1,15 +1,15 @@
-package main
+package main // Paquete principal
 
 import (
-	"reflect"
-	"testing"
+	"reflect" // Para comparar slices
+	"testing" // Para pruebas unitarias
 )
 
-func TestSortInts(t *testing.T) {
+func TestSortInts(t *testing.T) { // Test para SortInts
 	tests := []struct {
-		name      string
-		nums      []int
-		expectativa []int
+		name        string // Nombre del caso de prueba
+		nums        []int  // Slice de entrada
+		expectativa []int  // Resultado esperado
 	}{
 		// Casos de prueba para la función SortInts.
 		{"Caso 1: slice desordenado", []int{3, 1, 2}, []int{1, 2, 3}},
@@ -24,12 +24,12 @@ func TestSortInts(t *testing.T) {
 		{"Caso 10: slice con cero y números positivos", []int{5, 0, 3, 1}, []int{0, 1, 3, 5}},
 	}
 
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			got := SortInts(tt.nums)
+	for _, tt := range tests { // Itera sobre cada caso de prueba
+		t.Run(tt.name, func(t *testing.T) { // Ejecuta subtest
+			got := SortInts(tt.nums) // Llama a la función
 			// reflect.DeepEqual se usa para comparar el contenido de los slices, ya que '==' no funciona para ellos.
-			if !reflect.DeepEqual(got, tt.expectativa) {
-				t.Errorf("SortInts(%v) = %v; se esperaba %v", tt.nums, got, tt.expectativa)
+			if !reflect.DeepEqual(got, tt.expectativa) { // Compara resultado
+				t.Errorf("SortInts(%v) = %v; se esperaba %v", tt.nums, got, tt.expectativa) // Falla si no coincide
 			}
 		})
 	}

@@ -1,13 +1,13 @@
-package main
+package main // Paquete principal
 
-import "testing"
+import "testing" // Para pruebas unitarias
 
-func TestCountOccurrences(t *testing.T) {
+func TestCountOccurrences(t *testing.T) { // Test para CountOccurrences
 	tests := []struct {
-		name      string
-		nums      []int
-		target    int
-		expectativa int
+		name        string // Nombre del caso de prueba
+		nums        []int  // Slice de entrada
+		target      int    // Valor a buscar
+		expectativa int    // Resultado esperado
 	}{
 		{"Caso 1: el target aparece 3 veces", []int{1, 2, 2, 3, 2}, 2, 3},
 		{"Caso 2: el target no aparece", []int{1, 2, 3, 4, 5}, 6, 0},
@@ -23,11 +23,11 @@ func TestCountOccurrences(t *testing.T) {
 		{"Caso 12: números negativos y positivos", []int{-1, 1, -1, 1}, -1, 2},
 	}
 
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			got := CountOccurrences(tt.nums, tt.target)
-			if got != tt.expectativa {
-				t.Errorf("CountOccurrences(%v, %d) = %d; se esperaba %d", tt.nums, tt.target, got, tt.expectativa)
+	for _, tt := range tests { // Itera sobre cada caso de prueba
+		t.Run(tt.name, func(t *testing.T) { // Ejecuta subtest
+			got := CountOccurrences(tt.nums, tt.target) // Llama a la función
+			if got != tt.expectativa {                  // Compara resultado
+				t.Errorf("CountOccurrences(%v, %d) = %d; se esperaba %d", tt.nums, tt.target, got, tt.expectativa) // Falla si no coincide
 			}
 		})
 	}

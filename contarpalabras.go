@@ -1,8 +1,8 @@
-package main
+package main // Paquete principal
 
-import "strings"
+import "strings" // Importa el paquete strings para manipular cadenas
 
 // WordCount retorna cuántas palabras hay en el string s.
-func WordCount(s string) int {
-	return len(strings.Fields(s))
+func WordCount(s string) int { // Cuenta palabras en un string
+	return len(strings.Fields(s)) // Separa por espacios y cuenta
 }

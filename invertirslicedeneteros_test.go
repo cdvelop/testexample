@@ -1,15 +1,15 @@
-package main
+package main // Paquete principal
 
 import (
-	"reflect"
-	"testing"
+	"reflect" // Para comparar slices
+	"testing" // Para pruebas unitarias
 )
 
-func TestReverseSlice(t *testing.T) {
+func TestReverseSlice(t *testing.T) { // Test para la función ReverseSlice
 	tests := []struct {
-		name        string
-		nums        []int
-		expectativa []int
+		name        string // Nombre del caso de prueba
+		nums        []int  // Slice de entrada
+		expectativa []int  // Resultado esperado
 	}{
 		// Casos de prueba para la función ReverseSlice.
 		{"Caso 1: ejemplo del certamen", []int{1, 2, 3}, []int{3, 2, 1}},
@@ -25,11 +25,11 @@ func TestReverseSlice(t *testing.T) {
 		{"Caso 11: slice con números grandes", []int{100, 2000, 300}, []int{300, 2000, 100}},
 	}
 
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			got := ReverseSlice(tt.nums)
-			if !reflect.DeepEqual(got, tt.expectativa) {
-				t.Errorf("ReverseSlice(%v) = %v; se esperaba %v", tt.nums, got, tt.expectativa)
+	for _, tt := range tests { // Itera sobre cada caso de prueba
+		t.Run(tt.name, func(t *testing.T) { // Ejecuta subtest con nombre
+			got := ReverseSlice(tt.nums)                 // Llama a la función a probar
+			if !reflect.DeepEqual(got, tt.expectativa) { // Compara resultado
+				t.Errorf("ReverseSlice(%v) = %v; se esperaba %v", tt.nums, got, tt.expectativa) // Falla si no coincide
 			}
 		})
 	}

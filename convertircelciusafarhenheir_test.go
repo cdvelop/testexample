@@ -1,12 +1,12 @@
-package main
+package main // Paquete principal
 
-import "testing"
+import "testing" // Para pruebas unitarias
 
-func TestCelsiusToFahrenheit(t *testing.T) {
+func TestCelsiusToFahrenheit(t *testing.T) { // Test para CelsiusToFahrenheit
 	tests := []struct {
-		name      string
-		c         float64
-		expectativa float64
+		name        string  // Nombre del caso de prueba
+		c           float64 // Valor en Celsius
+		expectativa float64 // Valor esperado en Fahrenheit
 	}{
 		// Casos de prueba para la función CelsiusToFahrenheit.
 		{"Caso 1: 0 Celsius es 32 Fahrenheit", 0, 32},
@@ -22,11 +22,11 @@ func TestCelsiusToFahrenheit(t *testing.T) {
 		{"Caso 11: 25 Celsius", 25, 77},
 	}
 
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			got := CelsiusToFahrenheit(tt.c)
-			if got != tt.expectativa {
-				t.Errorf("CelsiusToFahrenheit(%f) = %f; se esperaba %f", tt.c, got, tt.expectativa)
+	for _, tt := range tests { // Itera sobre cada caso de prueba
+		t.Run(tt.name, func(t *testing.T) { // Ejecuta subtest
+			got := CelsiusToFahrenheit(tt.c) // Llama a la función
+			if got != tt.expectativa {       // Compara resultado
+				t.Errorf("CelsiusToFahrenheit(%f) = %f; se esperaba %f", tt.c, got, tt.expectativa) // Falla si no coincide
 			}
 		})
 	}

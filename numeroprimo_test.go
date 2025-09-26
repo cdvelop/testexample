@@ -1,12 +1,12 @@
-package main
+package main // Paquete principal
 
-import "testing"
+import "testing" // Para pruebas unitarias
 
-func TestIsPrime(t *testing.T) {
+func TestIsPrime(t *testing.T) { // Test para IsPrime
 	tests := []struct {
-		name        string
-		n           int
-		expectativa bool
+		name        string // Nombre del caso de prueba
+		n           int    // Número a probar
+		expectativa bool   // Resultado esperado
 	}{
 		{"Caso 1: 2 es primo", 2, true},
 		{"Caso 2: 7 es primo", 7, true},
@@ -22,11 +22,11 @@ func TestIsPrime(t *testing.T) {
 		{"Caso 12: 121 (no es primo)", 121, false}, // 11 * 11
 	}
 
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			got := IsPrime(tt.n)
-			if got != tt.expectativa {
-				t.Errorf("IsPrime(%d) = %t; se esperaba %t", tt.n, got, tt.expectativa)
+	for _, tt := range tests { // Itera sobre cada caso de prueba
+		t.Run(tt.name, func(t *testing.T) { // Ejecuta subtest
+			got := IsPrime(tt.n)       // Llama a la función
+			if got != tt.expectativa { // Compara resultado
+				t.Errorf("IsPrime(%d) = %t; se esperaba %t", tt.n, got, tt.expectativa) // Falla si no coincide
 			}
 		})
 	}

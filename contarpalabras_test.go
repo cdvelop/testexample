@@ -1,12 +1,12 @@
-package main
+package main // Paquete principal
 
-import "testing"
+import "testing" // Para pruebas unitarias
 
-func TestWordCount(t *testing.T) {
+func TestWordCount(t *testing.T) { // Test para WordCount
 	tests := []struct {
-		name      string
-		s         string
-		expectativa int
+		name        string // Nombre del caso de prueba
+		s           string // Cadena de entrada
+		expectativa int    // Resultado esperado
 	}{
 		{"Caso 1: cadena simple", "hola mundo go", 3},
 		{"Caso 2: cadena vacía", "", 0},
@@ -20,11 +20,11 @@ func TestWordCount(t *testing.T) {
 		{"Caso 10: cadena con saltos de linea", "linea\ncon\nsaltos", 3},
 	}
 
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			got := WordCount(tt.s)
-			if got != tt.expectativa {
-				t.Errorf("WordCount(%q) = %d; se esperaba %d", tt.s, got, tt.expectativa)
+	for _, tt := range tests { // Itera sobre cada caso de prueba
+		t.Run(tt.name, func(t *testing.T) { // Ejecuta subtest
+			got := WordCount(tt.s)     // Llama a la función
+			if got != tt.expectativa { // Compara resultado
+				t.Errorf("WordCount(%q) = %d; se esperaba %d", tt.s, got, tt.expectativa) // Falla si no coincide
 			}
 		})
 	}
