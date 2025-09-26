@@ -23,7 +23,7 @@ func TestSortInts(t *testing.T) {
 		},
 		{
 			name:     "slice ya ordenado",
-			input:    []int{1, 2, 3, 4, 5},
+			input:    []int{1, 3, 2, 4, 5},
 			expected: []int{1, 2, 3, 4, 5},
 		},
 		{

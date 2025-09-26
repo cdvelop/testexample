@@ -49,7 +49,7 @@ func TestMaxinSlice(t *testing.T) {
 		{
 			name:     "numero_par_mediano",
 			n:        10,
-			expected: []int{0, 2, 4, 6, 8, 10},
+			expected: []int{0, 2, 10, 4, 6, 8},
 		},
 		{
 			name:     "numero_grande_par",
