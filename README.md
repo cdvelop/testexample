@@ -40,13 +40,13 @@ func TestAdd(t *testing.T) {
 
 ---
 
-## ✅ Caso 001 – Suma de positivos en un slice (5 pts.)
+## ✅ Caso 011 – Contar palabras (5 pts.)
 
 ```go
-// SumPositives retorna la suma de los enteros positivos dentro del slice nums.
-// Ejemplo: SumPositives([]int{-1, 2, 3, 0}) == 5
-// Si no hay positivos, debe retornar 0.
-func SumPositives(nums []int) int {
+// WordCount retorna cuántas palabras hay en el string s.
+// Una palabra se define como una secuencia de caracteres separados por espacios.
+// Ejemplo: WordCount("hola mundo go") == 3
+func WordCount(s string) int {
 	// TODO: implementar
 	return 0
 }
@@ -54,56 +54,47 @@ func SumPositives(nums []int) int {
 
 ---
 
-## ✅ Caso 002 – Máximo de dos números (10 pts.)
-
-```go
-// Max retorna el mayor de los dos números a y b.
-// Ejemplo: Max(3, 7) == 7
-func Max(a, b int) int {
-	// TODO: implementar
-	return 0
-}
-```
-
----
-
-## ✅ Caso 003 – Es par (5 pts.)
-
-```go
-// IsEven retorna true si n es par, false en caso contrario.
-// Ejemplo: IsEven(4) == true
-func IsEven(n int) bool {
-	// TODO: implementar
-	return false
-}
-```
-
----
-
-## ✅ Caso 004 – Factorial (15 pts.)
+## ✅ Caso 012 – Número primo (10 pts.)
 
 ```go
 // Descripción:
-// El factorial de un entero no negativo n (denotado n!) es el producto
-// de todos los enteros positivos desde 1 hasta n. Por convención:
-//   0! = 1
-// Y para n >= 1:
-//   n! = n * (n-1)!
+// Un número primo es aquel mayor que 1 que solo tiene dos divisores: 1 y él mismo.
+// Es decir, no puede dividirse exactamente (sin residuo) por ningún otro número.
 //
-// Notas importantes:
-// - Se asume n >= 0; los valores negativos no están definidos para factorial
-//   en este ejercicio.
-// - El factorial crece muy rápido. Para n relativamente grandes puede
-//   producirse desbordamiento (overflow) en tipos enteros de 32 o 64 bits.
-//   Si se espera n grande se debe usar un tipo con mayor capacidad (por
-//   ejemplo uint64) o big.Int de la biblioteca estándar.
+// Ejemplos de números primos: 2, 3, 5, 7, 11, 13...
+// Ejemplos de no primos: 1 (no cuenta como primo), 4 (2*2), 6 (2*3), 8 (2*4).
 //
-// Ejemplos:
-// Factorial(0) == 1
-// Factorial(5) == 120   // 5*4*3*2*1 = 120
-// Factorial(6) == 720   // 6*5*4*3*2*1 = 720
-// Factorial(10) == 3628800
-func Factorial(n int) int {
+// IsPrime retorna true si n es un número primo.
+// Ejemplo: IsPrime(7) == true
+// Ejemplo: IsPrime(10) == false
+func IsPrime(n int) bool {
+	// TODO: implementar
+	return false
+}
+
+```
+
+---
+
+## ✅ Caso 013 – Ordenar números (10 pts.)
+
+```go
+// SortInts retorna una copia del slice nums ordenado en forma ascendente.
+// Ejemplo: SortInts([]int{3,1,2}) == []int{1,2,3}
+func SortInts(nums []int) []int {
+	// TODO: implementar
+	return nil
+}
+```
+
+---
+
+## ✅ Caso 014 – Contar ocurrencias (5 pts.)
+
+```go
+// CountOccurrences retorna cuántas veces aparece target en el slice nums.
+// Ejemplo: CountOccurrences([]int{1,2,2,3,2}, 2) == 3
+func CountOccurrences(nums []int, target int) int {
 	// TODO: implementar
 	return 0
 }
@@ -111,27 +102,54 @@ func Factorial(n int) int {
 
 ---
 
-## ✅ Caso 005 – Palíndromo (15 pts.)
+## ✅ Caso 015 – Convertir Celsius a Fahrenheit (5 pts.)
 
 ```go
-// IsPalindrome retorna true si la palabra es un palíndromo.
-// Un palíndromo es una palabra que se lee igual de izquierda a derecha y de derecha a izquierda.
-// Ejemplo: IsPalindrome("radar") == true
-// Ejemplo adicional: IsPalindrome("level") == true
-func IsPalindrome(s string) bool {
+// CelsiusToFahrenheit convierte grados Celsius a Fahrenheit.
+// Fórmula: F = C * 9/5 + 32
+// Ejemplo: CelsiusToFahrenheit(0) == 32
+func CelsiusToFahrenheit(c float64) float64 {
 	// TODO: implementar
-	return false
+	return 0
 }
 ```
 
 ---
 
-## ✅ Caso 006 – Reversa de string (10 pts.)
+## ✅ Caso 016 – Números pares hasta N (10 pts.)
 
 ```go
-// Reverse retorna el string invertido.
-// Ejemplo: Reverse("hola") == "aloh"
-func Reverse(s string) string {
+// EvenNumbersUntil retorna un slice con todos los números pares desde 0 hasta n (incluido).
+// Ejemplo: EvenNumbersUntil(6) == []int{0,2,4,6}
+func EvenNumbersUntil(n int) []int {
+	// TODO: implementar
+	return nil
+}
+```
+
+---
+
+## ✅ Caso 017 – Buscar máximo en slice (5 pts.)
+
+```go
+// MaxInSlice retorna el valor máximo dentro de nums.
+// Si el slice está vacío, debe retornar 0.
+// Ejemplo: MaxInSlice([]int{3,7,2}) == 7
+func MaxInSlice(nums []int) int {
+	// TODO: implementar
+	return 0
+}
+```
+
+---
+
+## ✅ Caso 018 – Palabra más larga (10 pts.)
+
+```go
+// LongestWord retorna la palabra más larga en el string s.
+// En caso de empate, retorna la primera encontrada.
+// Ejemplo: LongestWord("go es divertido") == "divertido"
+func LongestWord(s string) string {
 	// TODO: implementar
 	return ""
 }
@@ -139,73 +157,27 @@ func Reverse(s string) string {
 
 ---
 
-## ✅ Caso 007 – Promedio (10 pts.)
+## ✅ Caso 019 – Tabla de multiplicar (5 pts.)
 
 ```go
-// Average retorna el promedio de una lista de enteros.
-// Si la lista está vacía, debe retornar 0.
-// Ejemplo: Average([]int{2, 4, 6}) == 4.0
-func Average(nums []int) float64 {
+// MultiplicationTable retorna un slice con los resultados de la tabla del número n, desde 1 hasta 10.
+// Ejemplo: MultiplicationTable(3) == []int{3,6,9,12,15,18,21,24,27,30}
+func MultiplicationTable(n int) []int {
 	// TODO: implementar
-	return 0
+	return nil
 }
 ```
 
 ---
 
-## ✅ Caso 008 – Contar vocales (10 pts.)
+## ✅ Caso 020 – Invertir slice de enteros (10 pts.)
 
 ```go
-// CountVowels retorna cuántas vocales (a,e,i,o,u) hay en el string.
-// Ejemplo: CountVowels("hola mundo") == 4
-func CountVowels(s string) int {
+// ReverseSlice retorna un nuevo slice con los elementos de nums en orden inverso.
+// Ejemplo: ReverseSlice([]int{1,2,3}) == []int{3,2,1}
+func ReverseSlice(nums []int) []int {
 	// TODO: implementar
-	return 0
-}
-```
-
----
-
-## ✅ Caso 009 – Buscar en slice (5 pts.)
-
-```go
-// Contains retorna true si el número target está dentro del slice nums.
-// Ejemplo: Contains([]int{1,2,3}, 2) == true
-func Contains(nums []int, target int) bool {
-	// TODO: implementar
-	return false
-}
-```
-
----
-
-## ✅ Caso 010 – Fibonacci (15 pts.)
-
-```go
-// Descripción:
-// La sucesión de Fibonacci es una secuencia donde cada término a partir
-// del segundo es la suma de los dos anteriores. Usando la convención con
-// índice 0 (0-based):
-//   Fibonacci(0) = 0
-//   Fibonacci(1) = 1
-// Para n >= 2:
-//   Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2)
-//
-// Notas importantes:
-// - El índice aquí es 0-based (Fibonacci(0)=0).
-// - Para esta práctica supongamos n razonablemente pequeño (por ejemplo
-//   n <= 45) para que el resultado quepa en un int de 32 bits.
-//
-// Ejemplos:
-// Fibonacci(0) == 0
-// Fibonacci(1) == 1
-// Fibonacci(5) == 5    // secuencia: 0,1,1,2,3,5
-// Fibonacci(7) == 13   // secuencia: 0,1,1,2,3,5,8,13
-// Fibonacci(10) == 55
-// Fibonacci(12) == 144
-func Fibonacci(n int) int {
-	// TODO: implementar
-	return 0
+	return nil
 }
 ```
 
