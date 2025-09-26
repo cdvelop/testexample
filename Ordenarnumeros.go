@@ -18,7 +18,7 @@ func SortInts(nums []int) []int {
 	return copia
 }
 
-func main() {
+func () {
 	// Ejemplo de uso
 	nums := []int{3, 1, 2}
 	fmt.Println("Original:", nums)
