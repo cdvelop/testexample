@@ -24,7 +24,7 @@ func TestEvenNumbersUntil(t *testing.T) {
 		{
 			name:     "numero_negativo",
 			n:        -1,
-			expected: []int{},
+			expected: nil,
 		},
 		{
 			name:     "numero_uno",
